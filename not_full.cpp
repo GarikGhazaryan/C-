@@ -8,9 +8,9 @@ int main()
 	std::string bar = "";
 	std::string erk_bar = "";
 	
-    for (int i =0;i<mstr.size();i++) {
+    for (int i =0;i<mstr.size()+1;i++) {
 
-        if (mstr[i] == ' ') {
+        if ((mstr[i] == ' ') || (mstr[i]==mstr[mstr.size()])) {
 
             if (bar.size() > erk_bar.size()) {
 
