@@ -2,35 +2,26 @@
 #include <string>
 int main(){
 
-
-
-
-struct Human 
+struct human 
 {
+    std::string name;
     int age;
 };
 
-Human zare= {15}; 
-Human zoro = {65}; 
-Human xcho = {48}; 
-Human lov = {41}; 
-Human husik = {25}; 
-Human madlen= {30}; 
+human people[6]={{"zare",15},
+		{"zoro",18},
+		{"xcho",41},
+		{"lov",48},
+		{"husik",14},
+		{"madlen",20}};
 
-std::string human[6]={"zare", "zoro", "xcho", "lov", "husik", "madlen"};
-
-
+int tmp=people[0].age;
+int tmpi=0;
 for (int i=0; i<6;i++){
-	std::cout<<*(human+i)<<std::endl;
-
-	std::cout<<lov.age<<std::endl;
-
-//	std::cout<<*(human+i).age<<std::endl;
-
-	
-
-
-
+	if(tmp<people[i].age){
+		tmp=people[i].age;
+		tmpi=i;
+	}
 }
-
+	std::cout<<people[tmpi].name<<"==="<<people[tmpi].age<<std::endl;
 }
