@@ -21,9 +21,10 @@ for (int i = 1; i < n; i++) {
 }
 
 if (achman == true)
-	std::cout<<"achman karg"<<std::endl;
+	std::cout<<"ascending"<<std::endl;
 else if(nvazman==true)
-	std::cout<<"nvazman karg"<<std::endl;
+	std::cout<<"descending"<<std::endl;
 else
-	std::cout<<"dasavorvac che"<<std::endl;
+	std::cout<<"not sorted"<<std::endl;
+	delete ar;
 }
