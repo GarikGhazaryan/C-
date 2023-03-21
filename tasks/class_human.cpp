@@ -1,53 +1,61 @@
 #include <iostream>
 
-class Human {
-	public:
-
+class Human 
+{
+	private:
 	std::string name;
 	int age;
+	public:
+	Human(std::string n, int a)
+	{
+		age=a;
+		name=n;
+	}
+	int getage()
+	{
+		return age;
+	}
 
+	std::string  getname()
+	{
+		return name;
+	}
 };
 
 
+void sort(Human* arr, int n)
+{
+	for(int i=0;i<n;i++)
+			for(int j=0;j<n-1;j++)
+			{
+				if(arr[j].getage()>arr[j+1].getage())
+				{
+					Human tmp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=tmp;
+
+				}
+			}
+}
+void print(Human* arr, int n)
+{
+	for (int i=0; i<n; i++)
+		{
+			std::cout<<arr[i].getname()<<"----"<<arr[i].getage()<<std::endl;
+		}	
+}
+
 int main()
 {
+		Human h1("Gexam", 67);
+		Human h2("Gago", 45);
+		Human h3("Nare",17);
+		Human h4("Zare",34);
+		Human h5("varsik",35);
 
-Human people[6]={{"zare",15},
-				{"zoro",18},
-				{"xcho",41},
-				{"lov",48},
-				{"husik",14},
-				{"madlen",20}};	
-int tmp=people[0].age;
-int tmpi=0;
-for (int i=0; i<6;i++){
-	if(tmp<people[i].age){
-		tmp=people[i].age;
-		tmpi=i;
-	std::cout<<people[i].age<<std::endl;
-	}
+		Human arr[]={h1,h2,h3,h4,h5};
+		print(arr,5);
+		std::cout<<"=================" <<std::endl;
+		sort(arr, 5);
+		print(arr, 5);
 }
-
-}
-
-/*	Human h1;
-	Human h2;
-	Human h3;
-	Human h4;
-	Human h5;
-	
-	h1.name="Gexam";
-	h2.name="Gago";
-	h3.name="Nare";
-	h4.name="Zarem";
-	h5.name="Hunan";
-
-	h1.age=11;
-	h2.age=22;
-	h3.age=33;
-	h4.age=44;
-	h5.age=55;
-
-	std::string mstr[]={"h1", "h2", "h3", "h4", "h5"};
-	std::cout<<mstr[2].age;
-*/
