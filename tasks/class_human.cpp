@@ -20,6 +20,11 @@ class Human
 	{
 		return name;
 	}
+
+	bool operator > (const Human& other)
+	{
+		return this->age > other.age;
+	}
 };
 
 
@@ -28,7 +33,7 @@ void sort(Human* arr, int n)
 	for(int i=0;i<n;i++)
 			for(int j=0;j<n-1;j++)
 			{
-				if(arr[j].getage()>arr[j+1].getage())
+				if(arr[j] > arr[j+1])
 				{
 					Human tmp=arr[j];
 					arr[j]=arr[j+1];
