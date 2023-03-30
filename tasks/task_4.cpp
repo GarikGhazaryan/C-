@@ -2,27 +2,24 @@
 
 int main() {
     int num;
-    int tmp=0;
-
+    int tmp;
+	int dig;
     std::cin >> num;
-   // std::cout <<num<< std::endl;
-    int dig=num;
+	if (!(std::cin.fail())){
+    	dig=num;
 
-    while (num != 0) {
-        int miavor = num % 10;
-        num =num/10;
-        tmp = tmp*10 + miavor;
-    }
-
-   // std::cout << tmp << std::endl;
-   // std::cout <<num<< std::endl;
+    	while (num != 0) {
+        	int miavor = num % 10;
+        	num =num/10;
+        	tmp = tmp*10 + miavor;
+    	}
  
-if (tmp==dig){
-	
-    std::cout << "polindrome" << std::endl;
-   
+		if (tmp==dig){
+    		std::cout << "polindrome" << std::endl;
+		}else
+    		std::cout << "not polindrome" << std::endl;
 
-
-}else
-    std::cout << "not polindrome" << std::endl;
+	}else{
+		std::cout<<"Please input a digite"<<std::endl;
+	}
 }

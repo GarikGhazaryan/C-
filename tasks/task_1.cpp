@@ -7,10 +7,15 @@ void get_sum(long,long);
 int main(){
 	
 	long num,sum,n;
+
+	std::cout<<"Input a number"<<std::endl;
 	std::cin >> num;
-	
-	n=get_mun_count(num);
-	get_sum(n,num);
+	if (!(std::cin.fail())){	
+		n=get_mun_count(num);
+		get_sum(n,num);
+	}else{ 
+		std::cout<<"please input an integer"<<std::endl;
+	}
 }
 
 
@@ -43,7 +48,7 @@ void get_sum(long n, long num)
 	        sum=sum+a;
 		}
 
-std::cout << "sum=  "<< sum <<std::endl;
+std::cout << "sum = "<< sum <<std::endl;
 
 }
 
